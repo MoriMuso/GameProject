@@ -1,9 +1,10 @@
 #include "DxLib.h"
 
 int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){
-    ChangeWindowMode(TRUE); // ƒEƒBƒ“ƒhƒEƒ‚[ƒh‚ÉÝ’è
-    DxLib_Init();   // DXƒ‰ƒCƒuƒ‰ƒŠ‰Šú‰»ˆ—
-    WaitKey();      // ƒL[“ü—Í‘Ò‚¿
-    DxLib_End();    // DXƒ‰ƒCƒuƒ‰ƒŠI—¹ˆ—
+    //aaaaa
+    ChangeWindowMode(TRUE); // ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰ã«è¨­å®š
+    DxLib_Init();   // DXãƒ©ã‚¤ãƒ–ãƒ©ãƒªåˆæœŸåŒ–å‡¦ç†
+    WaitKey();      // ã‚­ãƒ¼å…¥åŠ›å¾…ã¡
+    DxLib_End();    // DXãƒ©ã‚¤ãƒ–ãƒ©ãƒªçµ‚äº†å‡¦ç†
     return 0;
 }
