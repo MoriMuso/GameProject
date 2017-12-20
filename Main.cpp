@@ -1,4 +1,5 @@
 #include "DxLib.h"
+#include "AdminController.h"
 
 int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){
     //aaaaa
