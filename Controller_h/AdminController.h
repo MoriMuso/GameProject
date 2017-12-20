@@ -1,7 +1,7 @@
 #pragma once
 #include "DxLib.h"
 
-class Admin
+class AdminController
 {
 public:
 	Admin();
