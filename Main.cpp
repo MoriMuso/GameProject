@@ -1,12 +1,18 @@
 #include "DxLib.h"
-#include "AdminController.h"
+#include "AdminView.h"
 
 int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){
-    //aaaaa
-    ChangeWindowMode(TRUE); // ウィンドウモードに設定
-    DxLib_Init();   // DXライブラリ初期化処理
-    WaitKey();      // キー入力待ち
-    DxLib_End();    // DXライブラリ終了処理
+	ChangeWindowMode(TRUE), DxLib_Init(), SetDrawScreen(DX_SCREEN_BACK); //ウィンドウモード変更と初期化と裏画面設定
 
-    return 0;
+	AdminView* adminView = new AdminView();
+	//画面更新 & メッセージ処理 & 画面消去
+	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
+	{
+		adminView->adminReceiver();
+		adminView->adminDisplay();
+	}
+
+	delete adminView;
+	DxLib_End(); // DXライブラリ終了処理
+	return 0;
 }
