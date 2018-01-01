@@ -3,21 +3,14 @@
 AdminController::AdminController()
 {
 	adminModel = new AdminModel();
-	adminView = new AdminView();
 }
 
 AdminController::~AdminController()
 {
 	delete adminModel;
-	delete adminView;
 }
 
-void AdminController::receiver()
+AdminModel* AdminController::getModel()
 {
-	adminView->receiver();
-}
-
-void AdminController::display()
-{
-	adminView->display();
+	return adminModel;
 }

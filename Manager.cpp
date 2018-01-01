@@ -10,6 +10,16 @@ Manager::~Manager()
 
 }
 
+void Manager::receiver()
+{
+
+}
+
+void Manager::display()
+{
+
+}
+
 void Manager::sceneChange()
 {
 

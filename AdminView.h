@@ -1,19 +1,18 @@
 #pragma once
 
 #include "AdminController.h"
-#include "Receiver.h"
-#include "Display.h"
 #include "DxLib.h"
 
-class AdminView : Display, Receiver
+class AdminView
 {
 public:
-	AdminView(AdminModel* model);
+	AdminView();
 	~AdminView();
 
-	void display() override;
-	void receiver() override;
+	void adminDisplay();
+	void adminReceiver();
 private:
-
-	AdminModel* model;
+	AdminController* adminController;
+	AdminModel* adminModel;
+	char Name[31];
 };

@@ -1,20 +1,13 @@
 #pragma once
-
 #include "AdminModel.h"
-#include "AdminView.h"
-#include "Display.h"
-#include "Receiver.h"
 
-class AdminController : Display, Receiver
+class AdminController
 {
 public:
 	AdminController();
 	~AdminController();
 
-	void receiver() override;
-	void display() override;
-
+	AdminModel* getModel();
 private:
 	AdminModel* adminModel;
-	AdminView*  adminView;
 };
