@@ -8,13 +8,12 @@
 class AdminView : Display, Receiver
 {
 public:
-	AdminView();
+	AdminView(AdminModel* model);
 	~AdminView();
 
 	void display() override;
 	void receiver() override;
 private:
-	AdminController* adminController;
-	AdminModel* adminModel;
-	char Name[31];
+
+	AdminModel* model;
 };
