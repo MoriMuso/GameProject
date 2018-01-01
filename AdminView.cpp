@@ -17,7 +17,7 @@ AdminView::~AdminView()
 	delete adminController;
 }
 
-void AdminView::adminReceiver()
+void AdminView::receiver()
 {
 	if (CheckHitKey(KEY_INPUT_DOWN) != 0)
 	{
@@ -28,9 +28,14 @@ void AdminView::adminReceiver()
 	{
 		adminModel->getCursol()->subPosi();
 	}
+
+	if (CheckHitKey(KEY_INPUT_SPACE) != 0)
+	{
+		adminController
+	}
 }
 
-void AdminView::adminDisplay()
+void AdminView::display()
 {
 	// –¼‘O“ü—ÍŽwŽ¦•¶Žš—ñ‚Ì•`‰æ
 	//DrawString(0, 0, "–¼‘O‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢", GetColor(255, 255, 255));
