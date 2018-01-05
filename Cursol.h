@@ -14,6 +14,7 @@ public:
 	void addPosi();
 	void subPosi();
 	std::string getName();
+	int getPosition();
 
 private:
 	int x, y;

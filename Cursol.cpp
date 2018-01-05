@@ -58,3 +58,8 @@ void Cursol::addPosi()
 		y -= (posiMax - 1) * interval;
 	}
 }
+
+int Cursol::getPosition()
+{
+	return position;
+}

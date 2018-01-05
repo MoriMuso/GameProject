@@ -1,6 +1,6 @@
 #pragma once 
 
-#include "AdminView.h"
+#include "HomeView.h"
 #include "Display.h"
 #include "Receiver.h"
 #include "SceneChanger.h"
@@ -13,7 +13,14 @@ public:
 	
 	void receiver() override;
 	void display() override;
-	void sceneChange() override;
+
+	void sceneChange(TYPE type) override;
 
 private:
+	HomeView* homeView;
+	Receiver* rece;
+	Display*  disp;
+
+	TYPE nowScene;
+	TYPE nextScene;
 };

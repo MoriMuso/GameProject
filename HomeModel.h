@@ -1,14 +1,15 @@
 #pragma once
 
+#include "SceneChanger.h"
 #include "SelectBox.h"
 #include "Cursol.h"
 #include <vector>
 
-class AdminModel
+class HomeModel
 {
 public:
-	AdminModel();
-	~AdminModel();
+	HomeModel(SceneChanger* sceneChanger);
+	~HomeModel();
 
 	//SelectBoxÇÃê∂ê¨
 	void createSelectBox(int x, int y, std::string name);
@@ -18,9 +19,12 @@ public:
 	std::vector<SelectBox*> getSelectBox();
 	Cursol* getCursol();
 
+	void changeScene();
 private:
 	//SelectBoxÇÃvector
 	std::vector<SelectBox*> selectBox;
 
 	Cursol* cursol;
+	SceneChanger* sceneChanger;
+	
 };
