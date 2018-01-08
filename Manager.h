@@ -1,25 +1,25 @@
 #pragma once 
 
 #include "HomeView.h"
-#include "Display.h"
-#include "Receiver.h"
+#include "BaseView.h"
+#include "HomeController.h"
+#include "GameController.h"
 #include "SceneChanger.h"
 
-class Manager : SceneChanger, Display, Receiver
+class Manager : SceneChanger
 {
 public:
 	Manager();
 	~Manager();
 	
-	void receiver() override;
-	void display() override;
+	void receiver();
+	void display();
 
 	void sceneChange(TYPE type) override;
 
 private:
-	HomeView* homeView;
-	Receiver* rece;
-	Display*  disp;
+	BaseController* controller;
+	BaseView*  view;
 
 	TYPE nowScene;
 	TYPE nextScene;

@@ -1,44 +1,20 @@
 #include "HomeView.h"
 
-HomeView::HomeView(SceneChanger* sceneChanger)
+HomeView::HomeView(HomeModel* model)
 {
-	controller = new HomeController(sceneChanger);
-	model = controller->getModel();
-	controller->getModel()->createSelectBox(100, 100, "スタート");
-	controller->getModel()->createSelectBox(100, 200, "オプション");
-	controller->getModel()->createSelectBox(100, 300, "終了");
-
-	//new Cursol(x座標,y座標,対象の最大数,移動間隔,表示文字列)
-	controller->getModel()->createCursol(80, 100, 3, 100, "■");
+	this->model = model;	
 }
 
 HomeView::~HomeView()
 {
-	delete controller;
-}
-
-void HomeView::receiver()
-{
-	if (CheckHitKey(KEY_INPUT_DOWN) != 0)
-	{
-		model->getCursol()->addPosi();
-	}
-
-	if (CheckHitKey(KEY_INPUT_UP) != 0)
-	{
-		model->getCursol()->subPosi();
-	}
-
-	if (CheckHitKey(KEY_INPUT_SPACE) != 0)
-	{
-		model->changeScene();
-	}
+	
 }
 
 void HomeView::display()
 {
 	// 名前入力指示文字列の描画
-	//DrawString(0, 0, "名前を入力してください", GetColor(255, 255, 255));
+	DrawFormatString(10, 0, GetColor(255, 0, 255), "%d", model->getCursol()->getPosition());
+
 
 	DrawString(model->getCursol()->getX(), model->getCursol()->getY(), model->getCursol()->getName().c_str(), GetColor(255, 255, 255));
 

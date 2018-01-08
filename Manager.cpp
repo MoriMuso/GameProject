@@ -2,17 +2,18 @@
 
 Manager::Manager()
 {
-	homeView = new HomeView(this);
-	disp = (Display*)homeView;
-	rece = (Receiver*)homeView;
 	
-	nowScene  = START;
-	nextScene = START;
+	controller = (BaseController*) new HomeController(this);
+	view       = controller->getView();
+	
+	nowScene  = HOME;
+	nextScene = HOME;
 }
 
 Manager::~Manager()
 {
-	delete disp;
+	delete controller;
+	delete view;
 	//delete disp;
 }
 
@@ -20,13 +21,17 @@ void Manager::receiver()
 {
 	if (nowScene != nextScene)
 	{
-		delete disp;
-		//delete disp;
+		delete controller;
+		delete view;
 		switch (nextScene)
 		{
-		case START:
-			rece = (Receiver*) new HomeView(this);
-			disp = (Display*)rece;
+		case HOME:
+			controller = (BaseController*) new HomeController(this);
+			view = controller->getView();
+			break;
+		case GAME:
+			controller = (BaseController*) new GameController(this);
+			view	   = controller->getView();
 			break;
 		case OPTION:
 			break;
@@ -37,12 +42,12 @@ void Manager::receiver()
 		nowScene = nextScene;
 	}
 
- 	rece->receiver();
+ 	controller->receiver();
 }
 
 void Manager::display()
 {
-	disp->display();
+	view->display();
 }
 
 void Manager::sceneChange(TYPE type)

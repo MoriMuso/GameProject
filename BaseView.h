@@ -1,8 +1,8 @@
 #pragma once
 
-class Display
+class BaseView
 {
 public:
 	virtual void display() = 0;
-	virtual ~Display() = 0 {}
+	virtual ~BaseView() = 0 {}
 };

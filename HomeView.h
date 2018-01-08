@@ -1,22 +1,18 @@
 #pragma once
 
-#include "HomeController.h"
-#include "Receiver.h"
-#include "Display.h"
-#include "SceneChanger.h"
 #include "DxLib.h"
+#include "HomeModel.h"
+#include "BaseView.h"
 
-class HomeView : Display, Receiver
+
+class HomeView : BaseView
 {
 public:
-	HomeView(SceneChanger* sceneChanger);
+	HomeView(HomeModel* model);
 	~HomeView();
 
 	void display() override;
-	void receiver() override;
 
 private:
-
-	HomeController* controller;
 	HomeModel* model;
 };
